@@ -80,14 +80,27 @@ const CSV_URL = process.env.NEXT_PUBLIC_SHEETS_CSV_URL || '';
  * Fetch all guests – used by the admin page (always fresh).
  */
 export async function fetchAllGuests(): Promise<Guest[]> {
-  if (!CSV_URL) return [];
+  const csvUrl = process.env.NEXT_PUBLIC_SHEETS_CSV_URL;
+  
+  if (!csvUrl) {
+    console.warn('[guests] NEXT_PUBLIC_SHEETS_CSV_URL is not set');
+    return [];
+  }
+
   try {
-    const res = await fetch(CSV_URL, { cache: 'no-store' });
-    if (!res.ok) throw new Error('Failed to fetch guest list');
-    const text = await res.text();
+    const response = await fetch(csvUrl, {
+      cache: 'no-store',
+      next: { revalidate: 0 },
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const text = await response.text();
     return parseCSV(text);
-  } catch (err) {
-    console.error('[guests] fetchAllGuests error:', err);
+  } catch (error) {
+    console.error('[guests] fetchAllGuests error:', error);
     return [];
   }
 }

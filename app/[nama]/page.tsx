@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { notFound } from 'next/navigation';
 import { fetchGuestBySlug } from '@/lib/guests';
 import HeroSection from '@/components/sections/HeroSection';
@@ -7,8 +9,6 @@ import EventSection from '@/components/sections/EventSection';
 import CountdownTimer from '@/components/sections/CountdownTimer';
 import ClosingSection from '@/components/sections/ClosingSection';
 import MusicToggle from '@/components/ui/MusicToggle';
-
-export const dynamic = 'force-dynamic';
 
 interface PageProps {
   params: { nama: string };

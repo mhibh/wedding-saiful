@@ -1,8 +1,8 @@
+export const dynamic = 'force-dynamic';
+
 import type { Metadata } from 'next';
 import AdminPageClient from './AdminPageClient';
 import { fetchAllGuests } from '@/lib/guests';
-
-export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Admin — Daftar Tamu Undangan | Saiful & Aulia',
