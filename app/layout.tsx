@@ -2,14 +2,19 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Undangan Pernikahan | Saiful & Aulia',
+  title: 'Undangan Pernikahan Saiful & Aulia',
   description:
-    'Bismillah. Kami mengundang Anda untuk hadir pada tasyakuran pernikahan Kyai Muh. Saiful Anwar & Aulia Priyangka, Kamis 09 April 2026 di Pondok Pesantren Al-Qomar, Mempawah.',
+    'Tasyakuran Pernikahan Kyai Muh. Saiful Anwar & Aulia Priyangka — Kamis, 09 April 2026',
   openGraph: {
-    title: 'Undangan Pernikahan | Saiful & Aulia',
-    description:
-      'Kami mengundang Anda pada tasyakuran pernikahan kami, 09 April 2026.',
+    title: 'Undangan Pernikahan Saiful & Aulia',
+    description: 'Tasyakuran Pernikahan — Kamis, 09 April 2026 | 12:30 WIB',
     type: 'website',
+    locale: 'id_ID',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Undangan Pernikahan Saiful & Aulia',
+    description: 'Tasyakuran Pernikahan — Kamis, 09 April 2026 | 12:30 WIB',
   },
 };
 
